@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int cnt = 0;
+
+int main()
+{
+// #ifdef OJ
+// 	freopen("input.txt", "r++", stdin);
+// 	freopen("output.out", "w++", stdout);
+// #endif
+	long long int n, b, num;
+	scanf("%lld %lld %lld", &num, &b, &n);
+	int i;
+	long long int temp;
+	for (i = 0; i < 10; i++)
+	{
+		temp = num;
+		temp = (temp * 10) + i;
+		if (temp % b == 0)
+		{
+			num = temp;
+			break;
+		}
+		else if (i == 9 && (temp % b != 0))
+		{
+			printf("-1\n");
+			return 0;
+		}
+
+	}
+	
+	printf("%d", num);
+	for (i = 1; i < n; i++)
+	{
+		printf("0");
+	}
+	puts("");
+  return 0;
+}
